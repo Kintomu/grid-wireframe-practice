@@ -65,3 +65,51 @@ body {
         gap: 32px;
     }
 }
+
+@media (min-width: 768px) {
+    .wireframe {
+        max-width: 900px;
+        min-height: auto;
+        padding: 30px;
+        grid-template-columns: 1fr 2.1fr 1fr;
+        grid-template-rows: 48px 160px 50px;
+        grid-template-areas:
+            "header header header"
+            "aside-one article aside-two"
+            "footer footer footer";
+        gap: 8px;
+    }
+
+    .header {
+        grid-area: header;
+    }
+
+    .aside-one {
+        grid-area: aside-one;
+    }
+
+    .columns {
+        grid-area: article;
+        padding: 22px 14px 10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 52px;
+        gap: 10px 14px;
+    }
+
+    .columns::before {
+        content: "ARTICLE";
+        grid-column: 1 / -1;
+        align-self: end;
+        justify-self: center;
+        color: white;
+        font-size: 1rem;
+    }
+
+    .aside-two {
+        grid-area: aside-two;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+}
